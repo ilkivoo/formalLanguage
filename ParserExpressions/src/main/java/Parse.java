@@ -21,18 +21,19 @@ public class Parse {
             l++;
         }
         int r = expr.length();
-        while (r >= 0 && expr.charAt(r - 1) == ' ') {
+        while (r - 1 >= l && expr.charAt(r - 1) == ' ') {
             r--;
         }
         for (int i = l; i < r; i++) {
             sb.append(expr.charAt(i));
         }
-        return expr;
+
+        return sb.toString();
     }
 
     static boolean isInteger(String expr) {
         String str = help(expr);
-        for (int i = 0; i < expr.length(); i++) {
+        for (int i = 0; i < str.length(); i++) {
             if (!(str.charAt(i) >= '0' && str.charAt(i) <= '9')) {
                 return false;
             }
@@ -46,7 +47,8 @@ public class Parse {
     }
 
     static Node parseExp(String expr) throws CalculateException, ArithmeticException {
-        if (expr.equals("")) {
+        String str = help(expr);
+        if (str.equals("")) {
             //return new Node(null, null, '#', 0);
             //throw new CalculateException(((Integer)0).toString());
             throw new ArithmeticException("");
@@ -61,7 +63,7 @@ public class Parse {
 
     private static Node parseSum(String expr) throws CalculateException {
         if (isInteger(expr)) {
-            return new Node(null, null, '#', Integer.parseInt(expr));
+            return new Node(null, null, '#', parse(expr));
         }
         int b = 0;
         int ind = -1;
@@ -119,7 +121,7 @@ public class Parse {
 
     private static Node parseMul(String expr) throws CalculateException {
         if (isInteger(expr)) {
-            return new Node(null, null, '#', Integer.parseInt(expr));
+            return new Node(null, null, '#', parse(expr));
         }
         int b = 0;
         int ind = -1;
@@ -184,9 +186,9 @@ public class Parse {
         }
     }
 
-    private static Node parsePow(String expr) throws CalculateException{
+    private static Node parsePow(String expr) throws CalculateException {
         if (isInteger(expr)) {
-            return new Node(null, null, '#', Integer.parseInt(expr));
+            return new Node(null, null, '#', parse(expr));
         }
         int b = 0;
         for (int i = 0; i < expr.length(); i++) {
@@ -227,9 +229,10 @@ public class Parse {
         if (b != 0) {
             throw new CalculateException("violates balance brackets in substring: " + expr);
         }
-        if (expr.charAt(0) == '(' && expr.charAt(expr.length() - 1) == ')') {
+        String str = help(expr);
+        if (str.length() >= 2 && str.charAt(0) == '(' && str.charAt(str.length() - 1) == ')') {
             Node result;
-            result = parseExp(expr.substring(1, expr.length() - 1));
+            result = parseExp(str.substring(1, str.length() - 1));
             /*try {
                 result = parseExp(expr.substring(1, expr.length() - 1));
             }

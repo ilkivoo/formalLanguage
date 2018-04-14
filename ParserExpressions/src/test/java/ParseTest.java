@@ -119,4 +119,11 @@ public class ParseTest {
         assertEquals(true, Node.eq(rAns, Parse.parseExp(expr)));
     }
 
+    @Test
+    public void test8() {
+        String str = Parse.help("");
+        assertEquals(str, "");
+
+    }
+
 }
