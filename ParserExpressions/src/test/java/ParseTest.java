@@ -16,7 +16,7 @@ public class ParseTest {
     @Test
     public void parseExp() throws Exception {
         Node rightAnswer = new Node(null, null, '#', 0);
-        assertEquals(true, Node.eq(rightAnswer, Parse.parseExp("")));
+        assertEquals(true, Node.eq(rightAnswer, Parse.parseExp("0")));
         rightAnswer = new Node(null, null, '#', 5);
         assertEquals(true, Node.eq(rightAnswer, Parse.parseExp("5")));
     }
