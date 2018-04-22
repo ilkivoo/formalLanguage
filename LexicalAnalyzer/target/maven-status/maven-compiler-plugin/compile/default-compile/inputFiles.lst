@@ -1,0 +1,10 @@
+/home/olya/formallanguages/git/formalLanguage/LexicalAnalyzer/src/main/java/ru/spbau/mit/alyokhina/Operator.java
+/home/olya/formallanguages/git/formalLanguage/LexicalAnalyzer/src/main/java/ru/spbau/mit/alyokhina/LexerException.java
+/home/olya/formallanguages/git/formalLanguage/LexicalAnalyzer/src/main/java/ru/spbau/mit/alyokhina/Main.java
+/home/olya/formallanguages/git/formalLanguage/LexicalAnalyzer/src/main/java/ru/spbau/mit/alyokhina/Colon.java
+/home/olya/formallanguages/git/formalLanguage/LexicalAnalyzer/src/main/java/ru/spbau/mit/alyokhina/LexicalAnalizator.java
+/home/olya/formallanguages/git/formalLanguage/LexicalAnalyzer/src/main/java/ru/spbau/mit/alyokhina/Token.java
+/home/olya/formallanguages/git/formalLanguage/LexicalAnalyzer/src/main/java/ru/spbau/mit/alyokhina/Num.java
+/home/olya/formallanguages/git/formalLanguage/LexicalAnalyzer/src/main/java/ru/spbau/mit/alyokhina/KeyWord.java
+/home/olya/formallanguages/git/formalLanguage/LexicalAnalyzer/src/main/java/ru/spbau/mit/alyokhina/Literal.java
+/home/olya/formallanguages/git/formalLanguage/LexicalAnalyzer/src/main/java/ru/spbau/mit/alyokhina/Ident.java
