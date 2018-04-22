@@ -14,7 +14,7 @@ public class LexicalAnalizatorTest {
         ArrayList<Token> tokens = new ArrayList<Token>();
         tokens.add(new KeyWord(0, 0, 3, "read"));
         tokens.add(new Ident(0, 5, 5, "x"));
-        tokens.add(new Colon(0, 6, 6));
+        tokens.add(new Colon(0, 6, 6, ';'));
         tokens.add(new KeyWord(0, 8, 9, "if"));
         tokens.add(new Ident(0, 11, 11, "y"));
         tokens.add(new Operator(0, 13, 13, "+"));
@@ -36,7 +36,7 @@ public class LexicalAnalizatorTest {
         ArrayList<Token> tokens = new ArrayList<Token>();
         tokens.add(new KeyWord(1, 0, 3, "read"));
         tokens.add(new Ident(1, 5, 5, "x"));
-        tokens.add(new Colon(1, 6, 6));
+        tokens.add(new Colon(1, 6, 6, ';'));
         tokens.add(new KeyWord(1, 8, 9, "if"));
         tokens.add(new Ident(1, 11, 11, "y"));
         tokens.add(new Operator(1, 13, 13, "+"));
@@ -60,7 +60,7 @@ public class LexicalAnalizatorTest {
         ArrayList<Token> tokens = new ArrayList<Token>();
         tokens.add(new KeyWord(1, 0, 3, "read"));
         tokens.add(new Ident(1, 5, 5, "x"));
-        tokens.add(new Colon(1, 6, 6));
+        tokens.add(new Colon(1, 6, 6, ';'));
 
         tokens.add(new KeyWord(2, 1, 2, "if"));
         tokens.add(new Ident(2, 4, 4, "y"));
@@ -87,11 +87,11 @@ public class LexicalAnalizatorTest {
         LexicalAnalizator la = new LexicalAnalizator("if(x==1)then\r\narar");
         ArrayList<Token> tokens = new ArrayList<Token>();
         tokens.add(new KeyWord(0, 0, 1, "if"));
-        tokens.add(new Colon(0, 2, 2));
+        tokens.add(new Colon(0, 2, 2, '('));
         tokens.add(new Ident(0, 3, 3, "x"));
         tokens.add(new Operator(0, 4, 5, "=="));
         tokens.add(new Num(0, 6, 6, "1"));
-        tokens.add(new Colon(0, 7, 7));
+        tokens.add(new Colon(0, 7, 7, ')'));
         tokens.add(new KeyWord(0, 8, 11, "then"));
         tokens.add(new Ident(1, 0, 3, "arar"));
         assertEquals(tokens, la.getTokens());
@@ -103,7 +103,7 @@ public class LexicalAnalizatorTest {
         ArrayList<Token> tokens = new ArrayList<Token>();
         tokens.add(new KeyWord(0, 0, 3, "read"));
         tokens.add(new Ident(0, 5, 5, "x"));
-        tokens.add(new Colon(0, 6, 6));
+        tokens.add(new Colon(0, 6, 6, ';'));
         tokens.add(new KeyWord(0, 8, 9, "if"));
         tokens.add(new Ident(0, 11, 11, "y"));
         tokens.add(new Operator(0, 13, 13, "+"));
@@ -126,7 +126,7 @@ public class LexicalAnalizatorTest {
         ArrayList<Token> tokens = new ArrayList<Token>();
         tokens.add(new KeyWord(0, 0, 3, "read"));
         tokens.add(new Ident(0, 5, 5, "x"));
-        tokens.add(new Colon(0, 6, 6));
+        tokens.add(new Colon(0, 6, 6, ';'));
         tokens.add(new KeyWord(0, 8, 9, "if"));
         tokens.add(new Ident(0, 11, 11, "y"));
         tokens.add(new Operator(0, 13, 13, "+"));
@@ -149,7 +149,7 @@ public class LexicalAnalizatorTest {
         ArrayList<Token> tokens = new ArrayList<Token>();
         tokens.add(new KeyWord(0, 0, 3, "read"));
         tokens.add(new Ident(0, 5, 5, "x"));
-        tokens.add(new Colon(0, 6, 6));
+        tokens.add(new Colon(0, 6, 6, ';'));
         tokens.add(new KeyWord(0, 8, 9, "if"));
         tokens.add(new Ident(0, 11, 11, "y"));
         tokens.add(new Operator(0, 13, 13, "+"));

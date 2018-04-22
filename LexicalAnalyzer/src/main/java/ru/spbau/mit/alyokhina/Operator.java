@@ -28,34 +28,29 @@ public class Operator implements Token {
                 if (flag) {
                     return "" + c1;
                 }
+            }
+
+            if (pos + 2 >= data.length()) {
+                return "";
+            }
+            char c2 = data.charAt(pos + 1);
+            String str = "" + c1 + c2;
+            if ( str.equals("==") ||  str.equals("!=") || str.equals(">=") ||
+                    str.equals("<=") || str.equals("&&") || str.equals("||") ) {
+                boolean flag = !Ident.isIdent(data, pos+2).equals("");
+                flag = flag || Colon.isColon(data.charAt(pos+2));
+                flag = flag || Colon.isBlank(data.charAt(pos+2));
+                flag = flag || !Num.isNum(data, pos+2).equals("");
+                if (flag) {
+                    return str;
+                }
                 else {
                     return "";
                 }
             }
             else {
-                if (pos + 2 >= data.length()) {
-                    return "";
-                }
-                char c2 = data.charAt(pos + 1);
-                String str = "" + c1 + c2;
-                if ( str.equals("==") ||  str.equals("!=") || str.equals(">=") ||
-                        str.equals("<=") || str.equals("&&") || str.equals("||") ) {
-                    boolean flag = !Ident.isIdent(data, pos+2).equals("");
-                    flag = flag || Colon.isColon(data.charAt(pos+2));
-                    flag = flag || Colon.isBlank(data.charAt(pos+2));
-                    flag = flag || !Num.isNum(data, pos+2).equals("");
-                    if (flag) {
-                        return str;
-                    }
-                    else {
-                        return "";
-                    }
-                }
-                else {
-                    return "";
-                }
+                return "";
             }
-
         }
         return "";
     }

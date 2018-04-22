@@ -16,15 +16,30 @@ public class LexicalAnalizator {
         size = 0;
     }
 
+    private void skipComents() {
+        if (size + 1 < data.length()) {
+            if (data.charAt(size) == '/' && data.charAt(size + 1) == '/') {
+                size+=2;
+                curPos+=2;
+                while (size < data.length() && (data.charAt(size) != '\n' && data.charAt(size) != '\r')) {
+                    size++;
+                    curPos++;
+                }
+                skipWhiteSpace();
+            }
+        }
+    }
+
     public ArrayList<Token> getTokens() throws LexerException {
         if (result != null) {
             return  result;
         }
         result = new ArrayList<Token>();
         skipWhiteSpace();
+        skipComents();
         while (size < data.length()) {
             if (Colon.isColon(data.charAt(size))) {
-                Colon colon = new Colon(curLine, curPos, curPos);
+                Colon colon = new Colon(curLine, curPos, curPos, data.charAt(size));
                 add(colon, 1);
             }
             else {
@@ -69,6 +84,7 @@ public class LexicalAnalizator {
                 }
             }
             skipWhiteSpace();
+            skipComents();
         }
         return result;
     }
