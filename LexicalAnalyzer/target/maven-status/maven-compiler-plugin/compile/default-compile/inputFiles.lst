@@ -1,5 +1,6 @@
 /home/olya/formallanguages/LexicalAnalyzer/src/main/java/ru/spbau/mit/alyokhina/LexerException.java
-/home/olya/formallanguages/LexicalAnalyzer/src/main/java/ru/spbau/mit/alyokhina/LexicalAnalizator.java
+/home/olya/formallanguages/LexicalAnalyzer/src/main/java/ru/spbau/mit/alyokhina/Bracket.java
+/home/olya/formallanguages/LexicalAnalyzer/src/main/java/ru/spbau/mit/alyokhina/LexicalAnalyser.java
 /home/olya/formallanguages/LexicalAnalyzer/src/main/java/ru/spbau/mit/alyokhina/Num.java
 /home/olya/formallanguages/LexicalAnalyzer/src/main/java/ru/spbau/mit/alyokhina/Token.java
 /home/olya/formallanguages/LexicalAnalyzer/src/main/java/ru/spbau/mit/alyokhina/KeyWord.java

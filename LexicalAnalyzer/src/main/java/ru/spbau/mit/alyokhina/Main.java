@@ -17,8 +17,8 @@ public class Main {
         else {
             try {
                 String data = readUsingFiles(argv[0]);
-                LexicalAnalizator lexicalAnalizator = new LexicalAnalizator(data);
-                ArrayList<Token> arrayList = lexicalAnalizator.getTokens();
+                LexicalAnalyser lexicalAnalyser = new LexicalAnalyser(data);
+                ArrayList<Token> arrayList = lexicalAnalyser.getTokens();
                 for (Token token : arrayList) {
                     token.print();
                 }

@@ -23,8 +23,10 @@ public class Operator implements Token {
             if (c1 == '+' || c1 == '-' || c1 == '*' || c1 == '/' || c1 == '%' || c1 == '>' || c1 == '<') {
                 boolean flag = !Ident.isIdent(data, pos+1).equals("");
                 flag = flag || Colon.isColon(data.charAt(pos+1));
+                flag = flag || Bracket.isBracket(data.charAt(pos+1));
                 flag = flag || Colon.isBlank(data.charAt(pos+1));
                 flag = flag || !Num.isNum(data, pos+1).equals("");
+                flag = flag || !Operator.isOperator(data, pos+1).equals("");
                 if (flag) {
                     return "" + c1;
                 }
@@ -39,8 +41,10 @@ public class Operator implements Token {
                     str.equals("<=") || str.equals("&&") || str.equals("||") ) {
                 boolean flag = !Ident.isIdent(data, pos+2).equals("");
                 flag = flag || Colon.isColon(data.charAt(pos+2));
+                flag = flag || Bracket.isBracket(data.charAt(pos+2));
                 flag = flag || Colon.isBlank(data.charAt(pos+2));
                 flag = flag || !Num.isNum(data, pos+2).equals("");
+                flag = flag || !Operator.isOperator(data, pos + 2).equals("");
                 if (flag) {
                     return str;
                 }

@@ -4,7 +4,7 @@ ru/spbau/mit/alyokhina/Ident.class
 ru/spbau/mit/alyokhina/Operator.class
 ru/spbau/mit/alyokhina/LexerException.class
 ru/spbau/mit/alyokhina/KeyWord.class
-ru/spbau/mit/alyokhina/LexicalAnalizator.class
 ru/spbau/mit/alyokhina/Colon.class
+ru/spbau/mit/alyokhina/LexicalAnalyser.class
 ru/spbau/mit/alyokhina/Main.class
 ru/spbau/mit/alyokhina/Num.class

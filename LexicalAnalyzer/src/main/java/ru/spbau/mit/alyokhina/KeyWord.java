@@ -13,7 +13,7 @@ public class KeyWord implements Token {
     }
 
     private static boolean isSeparator(char c) {
-        return Colon.isColon(c) || Colon.isBlank(c);
+        return Colon.isColon(c) || Colon.isBlank(c) || Bracket.isBracket(c);
     }
 
     public static String isKeyWord(String data, int pos) {

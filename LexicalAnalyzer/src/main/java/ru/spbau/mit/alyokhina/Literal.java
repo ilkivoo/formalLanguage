@@ -14,7 +14,7 @@ public class Literal implements Token {
 
 
     private static boolean isSeparator(char c) {
-       return Colon.isColon(c) || Colon.isBlank(c);
+       return Colon.isColon(c) || Bracket.isBracket(c) || Colon.isBlank(c);
     }
 
     public static String isLiteral(String data, int pos) {

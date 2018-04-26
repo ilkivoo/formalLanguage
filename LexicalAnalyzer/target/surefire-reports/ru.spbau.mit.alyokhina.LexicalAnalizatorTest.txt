@@ -1,4 +1,36 @@
 -------------------------------------------------------------------------------
 Test set: ru.spbau.mit.alyokhina.LexicalAnalizatorTest
 -------------------------------------------------------------------------------
-Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.048 sec - in ru.spbau.mit.alyokhina.LexicalAnalizatorTest
+Tests run: 13, Failures: 0, Errors: 7, Skipped: 0, Time elapsed: 0.057 sec <<< FAILURE! - in ru.spbau.mit.alyokhina.LexicalAnalizatorTest
+test1(ru.spbau.mit.alyokhina.LexicalAnalizatorTest)  Time elapsed: 0.005 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: ru/spbau/mit/alyokhina/LexicalAnalizator
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:381)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:338)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	at ru.spbau.mit.alyokhina.LexicalAnalizatorTest.test1(LexicalAnalizatorTest.java:12)
+
+test2(ru.spbau.mit.alyokhina.LexicalAnalizatorTest)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: ru/spbau/mit/alyokhina/LexicalAnalizator
+	at ru.spbau.mit.alyokhina.LexicalAnalizatorTest.test2(LexicalAnalizatorTest.java:34)
+
+test3(ru.spbau.mit.alyokhina.LexicalAnalizatorTest)  Time elapsed: 0.001 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: ru/spbau/mit/alyokhina/LexicalAnalizator
+	at ru.spbau.mit.alyokhina.LexicalAnalizatorTest.test3(LexicalAnalizatorTest.java:58)
+
+test4(ru.spbau.mit.alyokhina.LexicalAnalizatorTest)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: ru/spbau/mit/alyokhina/LexicalAnalizator
+	at ru.spbau.mit.alyokhina.LexicalAnalizatorTest.test4(LexicalAnalizatorTest.java:86)
+
+test5(ru.spbau.mit.alyokhina.LexicalAnalizatorTest)  Time elapsed: 0.001 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: ru/spbau/mit/alyokhina/LexicalAnalizator
+	at ru.spbau.mit.alyokhina.LexicalAnalizatorTest.test5(LexicalAnalizatorTest.java:101)
+
+test6(ru.spbau.mit.alyokhina.LexicalAnalizatorTest)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: ru/spbau/mit/alyokhina/LexicalAnalizator
+	at ru.spbau.mit.alyokhina.LexicalAnalizatorTest.test6(LexicalAnalizatorTest.java:124)
+
+test7(ru.spbau.mit.alyokhina.LexicalAnalizatorTest)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: ru/spbau/mit/alyokhina/LexicalAnalizator
+	at ru.spbau.mit.alyokhina.LexicalAnalizatorTest.test7(LexicalAnalizatorTest.java:147)
+

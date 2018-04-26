@@ -1,20 +1,19 @@
 package ru.spbau.mit.alyokhina;
 
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 
 import java.util.ArrayList;
 
 import static org.junit.Assert.*;
 
-public class LexicalAnalizatorTest {
+public class LexicalAnalyserTest {
     @Test
     public void test1() throws Exception {
-        LexicalAnalizator la = new LexicalAnalizator("read x; if y + 1 == x then write y else write x");
-        ArrayList<Token> tokens = new ArrayList<Token>();
+        LexicalAnalyser la = new LexicalAnalyser("read x; if y + 1 == x then write y else write x");
+        ArrayList<Token> tokens = new ArrayList<>();
         tokens.add(new KeyWord(0, 0, 3, "read"));
         tokens.add(new Ident(0, 5, 5, "x"));
-        tokens.add(new Colon(0, 6, 6, ';'));
+        tokens.add(new Colon(0, 6, 6));
         tokens.add(new KeyWord(0, 8, 9, "if"));
         tokens.add(new Ident(0, 11, 11, "y"));
         tokens.add(new Operator(0, 13, 13, "+"));
@@ -32,11 +31,11 @@ public class LexicalAnalizatorTest {
 
     @Test
     public void test2() throws Exception {
-        LexicalAnalizator la = new LexicalAnalizator("\nread x; if y + 1 == x then write y else write x");
-        ArrayList<Token> tokens = new ArrayList<Token>();
+        LexicalAnalyser la = new LexicalAnalyser("\nread x; if y + 1 == x then write y else write x");
+        ArrayList<Token> tokens = new ArrayList<>();
         tokens.add(new KeyWord(1, 0, 3, "read"));
         tokens.add(new Ident(1, 5, 5, "x"));
-        tokens.add(new Colon(1, 6, 6, ';'));
+        tokens.add(new Colon(1, 6, 6));
         tokens.add(new KeyWord(1, 8, 9, "if"));
         tokens.add(new Ident(1, 11, 11, "y"));
         tokens.add(new Operator(1, 13, 13, "+"));
@@ -56,11 +55,11 @@ public class LexicalAnalizatorTest {
 
     @Test
     public void test3() throws Exception {
-        LexicalAnalizator la = new LexicalAnalizator("\nread x;\n if y + 1 == x \nthen write y else write x");
-        ArrayList<Token> tokens = new ArrayList<Token>();
+        LexicalAnalyser la = new LexicalAnalyser("\nread x;\n if y + 1 == x \nthen write y else write x");
+        ArrayList<Token> tokens = new ArrayList<>();
         tokens.add(new KeyWord(1, 0, 3, "read"));
         tokens.add(new Ident(1, 5, 5, "x"));
-        tokens.add(new Colon(1, 6, 6, ';'));
+        tokens.add(new Colon(1, 6, 6));
 
         tokens.add(new KeyWord(2, 1, 2, "if"));
         tokens.add(new Ident(2, 4, 4, "y"));
@@ -84,14 +83,14 @@ public class LexicalAnalizatorTest {
 
     @Test
     public void test4() throws Exception {
-        LexicalAnalizator la = new LexicalAnalizator("if(x==1)then\r\narar");
-        ArrayList<Token> tokens = new ArrayList<Token>();
+        LexicalAnalyser la = new LexicalAnalyser("if(x==1)then\r\narar");
+        ArrayList<Token> tokens = new ArrayList<>();
         tokens.add(new KeyWord(0, 0, 1, "if"));
-        tokens.add(new Colon(0, 2, 2, '('));
+        tokens.add(new Bracket(0, 2, 2, '('));
         tokens.add(new Ident(0, 3, 3, "x"));
         tokens.add(new Operator(0, 4, 5, "=="));
         tokens.add(new Num(0, 6, 6, "1"));
-        tokens.add(new Colon(0, 7, 7, ')'));
+        tokens.add(new Bracket(0, 7, 7, ')'));
         tokens.add(new KeyWord(0, 8, 11, "then"));
         tokens.add(new Ident(1, 0, 3, "arar"));
         assertEquals(tokens, la.getTokens());
@@ -99,11 +98,11 @@ public class LexicalAnalizatorTest {
 
     @Test
     public void test5() throws Exception {
-        LexicalAnalizator la = new LexicalAnalizator("read x; if y + 1 == x\fthen write\fy else write x");
-        ArrayList<Token> tokens = new ArrayList<Token>();
+        LexicalAnalyser la = new LexicalAnalyser("read x; if y + 1 == x\fthen write\fy else write x");
+        ArrayList<Token> tokens = new ArrayList<>();
         tokens.add(new KeyWord(0, 0, 3, "read"));
         tokens.add(new Ident(0, 5, 5, "x"));
-        tokens.add(new Colon(0, 6, 6, ';'));
+        tokens.add(new Colon(0, 6, 6));
         tokens.add(new KeyWord(0, 8, 9, "if"));
         tokens.add(new Ident(0, 11, 11, "y"));
         tokens.add(new Operator(0, 13, 13, "+"));
@@ -122,11 +121,11 @@ public class LexicalAnalizatorTest {
 
     @Test
     public void test6() throws Exception {
-        LexicalAnalizator la = new LexicalAnalizator("read x; if y + 1 == x\fthen write\fy else write +1.e-10");
-        ArrayList<Token> tokens = new ArrayList<Token>();
+        LexicalAnalyser la = new LexicalAnalyser("read x; if y + 1 == x\fthen write\fy else write +1.e-10");
+        ArrayList<Token> tokens = new ArrayList<>();
         tokens.add(new KeyWord(0, 0, 3, "read"));
         tokens.add(new Ident(0, 5, 5, "x"));
-        tokens.add(new Colon(0, 6, 6, ';'));
+        tokens.add(new Colon(0, 6, 6));
         tokens.add(new KeyWord(0, 8, 9, "if"));
         tokens.add(new Ident(0, 11, 11, "y"));
         tokens.add(new Operator(0, 13, 13, "+"));
@@ -145,11 +144,11 @@ public class LexicalAnalizatorTest {
 
     @Test
     public void test7() throws Exception {
-        LexicalAnalizator la = new LexicalAnalizator("read x; if y + 1 == x\fthen write\fy else write +1.E-10");
-        ArrayList<Token> tokens = new ArrayList<Token>();
+        LexicalAnalyser la = new LexicalAnalyser("read x; if y + 1 == x\fthen write\fy else write +1.E-10");
+        ArrayList<Token> tokens = new ArrayList<>();
         tokens.add(new KeyWord(0, 0, 3, "read"));
         tokens.add(new Ident(0, 5, 5, "x"));
-        tokens.add(new Colon(0, 6, 6, ';'));
+        tokens.add(new Colon(0, 6, 6));
         tokens.add(new KeyWord(0, 8, 9, "if"));
         tokens.add(new Ident(0, 11, 11, "y"));
         tokens.add(new Operator(0, 13, 13, "+"));

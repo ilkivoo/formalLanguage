@@ -34,7 +34,7 @@ public class Ident implements Token{
                 return sb.toString();
             }
             else {
-                if (Colon.isBlank(data.charAt(i)) || Colon.isColon(data.charAt(i)) || !Operator.isOperator(data, i).equals("")) {
+                if (Colon.isBlank(data.charAt(i)) || Colon.isColon(data.charAt(i)) || Bracket.isBracket(data.charAt(i)) || !Operator.isOperator(data, i).equals("")) {
                     return sb.toString();
                 }
                 else return "";

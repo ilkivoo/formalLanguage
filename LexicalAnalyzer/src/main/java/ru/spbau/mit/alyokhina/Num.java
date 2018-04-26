@@ -12,23 +12,11 @@ public class Num implements Token{
     }
 
     private static boolean check(String data, int pos) {
-        return !Operator.isOperator(data, pos).equals("") || Colon.isColon(data.charAt(pos)) || Colon.isBlank(data.charAt(pos)) || !Ident.isIdent(data, pos).equals("");
+        return !Operator.isOperator(data, pos).equals("") || Colon.isColon(data.charAt(pos)) || Bracket.isBracket(data.charAt(pos)) || Colon.isBlank(data.charAt(pos)) || !Ident.isIdent(data, pos).equals("");
     }
 
     private static boolean canBeInNum(char c, boolean flag0, boolean flag1, boolean flag2) {
-        if (c >= '0' && c <= '9') {
-            return true;
-        }
-        if ((c == 'e' || c == 'E') && flag0) {
-            return  true;
-        }
-        if (c == '-' && flag1) {
-            return  true;
-        }
-        if (c == '.' && flag2) {
-            return true;
-        }
-        return false;
+        return c >= '0' && c <= '9' || (c == 'e' || c == 'E') && flag0 || (c == '-' || c == '+') && flag1 || c == '.' && flag2;
     }
 
     public static String isNum(String data, int pos) {

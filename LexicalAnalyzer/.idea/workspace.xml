@@ -18,11 +18,34 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="LexicalAnalizator.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ru/spbau/mit/alyokhina/LexicalAnalizator.java">
+      <file leaf-file-name="LexicalAnalyser.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ru/spbau/mit/alyokhina/LexicalAnalyser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="37" column="25" lean-forward="true" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
+            <state relative-caret-position="18">
+              <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Literal.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ru/spbau/mit/alyokhina/Literal.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="342">
+              <caret line="25" column="9" lean-forward="false" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
+              <folding>
+                <element signature="e#438#439#0" expanded="true" />
+                <element signature="e#520#521#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LexicalAnalyserTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/ru/spbau/mit/alyokhina/LexicalAnalyserTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="36">
+              <caret line="8" column="28" lean-forward="false" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -30,21 +53,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LexerException.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ru/spbau/mit/alyokhina/LexerException.java">
+      <file leaf-file-name="LexicalAnalyzer.iml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LexicalAnalyzer.iml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+            <state relative-caret-position="306">
+              <caret line="17" column="9" lean-forward="false" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LexicalAnalizatorTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/ru/spbau/mit/alyokhina/LexicalAnalizatorTest.java">
+      <file leaf-file-name="LexerException.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ru/spbau/mit/alyokhina/LexerException.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-286">
-              <caret line="151" column="41" lean-forward="false" selection-start-line="151" selection-start-column="41" selection-end-line="151" selection-end-column="41" />
+            <state relative-caret-position="36">
+              <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="522">
+              <caret line="29" column="43" lean-forward="false" selection-start-line="29" selection-start-column="43" selection-end-line="29" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -53,8 +86,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ru/spbau/mit/alyokhina/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="9" column="26" lean-forward="false" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+            <state relative-caret-position="432">
+              <caret line="24" column="13" lean-forward="true" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -62,31 +95,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Colon.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ru/spbau/mit/alyokhina/Colon.java">
+      <file leaf-file-name="Num.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ru/spbau/mit/alyokhina/Num.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="32" column="36" lean-forward="true" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
+            <state relative-caret-position="576">
+              <caret line="32" column="9" lean-forward="true" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
+      <file leaf-file-name="Operator.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ru/spbau/mit/alyokhina/Operator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="12" column="35" lean-forward="false" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="KeyWord.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ru/spbau/mit/alyokhina/KeyWord.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="468">
-              <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+            <state relative-caret-position="-525">
+              <caret line="30" column="35" lean-forward="true" selection-start-line="30" selection-start-column="35" selection-end-line="30" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -95,28 +118,8 @@
       <file leaf-file-name="Ident.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ru/spbau/mit/alyokhina/Ident.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
-              <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Num.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ru/spbau/mit/alyokhina/Num.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="684">
-              <caret line="38" column="122" lean-forward="false" selection-start-line="38" selection-start-column="122" selection-end-line="38" selection-end-column="122" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Operator.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ru/spbau/mit/alyokhina/Operator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="605">
-              <caret line="52" column="13" lean-forward="false" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
+            <state relative-caret-position="432">
+              <caret line="24" column="18" lean-forward="false" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -138,12 +141,20 @@
       <find>keyWord</find>
       <find>date</find>
       <find>Colo</find>
+      <find>-</find>
+      <find>&lt;Token&gt;</find>
+      <find>new ArrayList&lt;Token&gt;()</find>
+      <find>Analizator</find>
+      <find>isC</find>
     </findStrings>
     <replaceStrings>
       <replace>operator</replace>
       <replace>num</replace>
       <replace>literal</replace>
       <replace>data</replace>
+      <replace>&lt;&gt;</replace>
+      <replace>new ArrayList&lt;&gt;()</replace>
+      <replace>Analyser</replace>
     </replaceStrings>
   </component>
   <component name="GradleLocalSettings">
@@ -155,16 +166,19 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/main/java/ru/spbau/mit/alyokhina/Token.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/spbau/mit/alyokhina/KeyWord.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/spbau/mit/alyokhina/LexerException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/spbau/mit/alyokhina/Ident.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/spbau/mit/alyokhina/Literal.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/spbau/mit/alyokhina/Num.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/spbau/mit/alyokhina/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/spbau/mit/alyokhina/Colon.java" />
-        <option value="$PROJECT_DIR$/src/test/java/ru/spbau/mit/alyokhina/LexicalAnalizatorTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/spbau/mit/alyokhina/LexicalAnalizator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/spbau/mit/alyokhina/KeyWord.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/spbau/mit/alyokhina/Literal.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/spbau/mit/alyokhina/Operator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/spbau/mit/alyokhina/Bracket.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/spbau/mit/alyokhina/LexicalAnalizator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/spbau/mit/alyokhina/Main.java" />
+        <option value="$PROJECT_DIR$/src/test/java/ru/spbau/mit/alyokhina/LexicalAnalizatorTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/spbau/mit/alyokhina/LexicalAnalyser.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/spbau/mit/alyokhina/Num.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/spbau/mit/alyokhina/Ident.java" />
+        <option value="$PROJECT_DIR$/LexicalAnalyzer.iml" />
       </list>
     </option>
   </component>
@@ -189,6 +203,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -251,10 +268,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
       <pane id="Scratches" />
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -283,8 +297,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.LexicalAnalizatorTest.test14">
-    <configuration name="LexicalAnalizatorTest.test10" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.LexicalAnalyserTest">
+    <configuration name="LexicalAnalizatorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="ru.spbau.mit.alyokhina.*" />
@@ -296,8 +310,8 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="ru.spbau.mit.alyokhina" />
       <option name="MAIN_CLASS_NAME" value="ru.spbau.mit.alyokhina.LexicalAnalizatorTest" />
-      <option name="METHOD_NAME" value="test10" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -309,7 +323,7 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="LexicalAnalizatorTest.test11" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LexicalAnalizatorTest.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="ru.spbau.mit.alyokhina.*" />
@@ -321,32 +335,7 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="ru.spbau.mit.alyokhina" />
       <option name="MAIN_CLASS_NAME" value="ru.spbau.mit.alyokhina.LexicalAnalizatorTest" />
-      <option name="METHOD_NAME" value="test11" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
-    <configuration name="LexicalAnalizatorTest.test12" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="ru.spbau.mit.alyokhina.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="LexicalAnalyzer" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="ru.spbau.mit.alyokhina" />
-      <option name="MAIN_CLASS_NAME" value="ru.spbau.mit.alyokhina.LexicalAnalizatorTest" />
-      <option name="METHOD_NAME" value="test12" />
+      <option name="METHOD_NAME" value="test1" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -398,6 +387,31 @@
       <option name="MAIN_CLASS_NAME" value="ru.spbau.mit.alyokhina.LexicalAnalizatorTest" />
       <option name="METHOD_NAME" value="test14" />
       <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="LexicalAnalyserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="ru.spbau.mit.alyokhina.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="LexicalAnalyzer" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="ru.spbau.mit.alyokhina" />
+      <option name="MAIN_CLASS_NAME" value="ru.spbau.mit.alyokhina.LexicalAnalyserTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -491,19 +505,19 @@
       <listeners />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.LexicalAnalizatorTest.test10" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.LexicalAnalizatorTest.test11" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.LexicalAnalizatorTest.test12" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.LexicalAnalizatorTest.test13" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.LexicalAnalizatorTest.test14" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.LexicalAnalizatorTest.test13" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.LexicalAnalizatorTest.test14" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.LexicalAnalizatorTest.test1" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.LexicalAnalizatorTest" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.LexicalAnalyserTest" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.LexicalAnalizatorTest.test14" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.LexicalAnalizatorTest.test13" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.LexicalAnalizatorTest.test12" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.LexicalAnalizatorTest.test11" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.LexicalAnalizatorTest.test10" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.LexicalAnalyserTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.LexicalAnalizatorTest" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.LexicalAnalizatorTest.test1" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.LexicalAnalizatorTest.test14" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.LexicalAnalizatorTest.test13" />
       </list>
     </recent_temporary>
   </component>
@@ -521,29 +535,14 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="LexicalAnalizatorTest_test14 - 2018.04.22 at 21h 56m 29s.xml">
-      <configuration name="LexicalAnalizatorTest.test14" configurationId="JUnit" />
+    <history-entry file="LexicalAnalizatorTest - 2018.04.26 at 23h 41m 32s.xml">
+      <configuration name="LexicalAnalizatorTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LexicalAnalizatorTest_test14 - 2018.04.22 at 21h 56m 41s.xml">
-      <configuration name="LexicalAnalizatorTest.test14" configurationId="JUnit" />
+    <history-entry file="LexicalAnalizatorTest - 2018.04.26 at 23h 43m 05s.xml">
+      <configuration name="LexicalAnalizatorTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LexicalAnalizatorTest_test14 - 2018.04.22 at 21h 57m 30s.xml">
-      <configuration name="LexicalAnalizatorTest.test14" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="LexicalAnalizatorTest_test14 - 2018.04.22 at 21h 58m 18s.xml">
-      <configuration name="LexicalAnalizatorTest.test14" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="LexicalAnalizatorTest_test14 - 2018.04.22 at 21h 59m 27s.xml">
-      <configuration name="LexicalAnalizatorTest.test14" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="LexicalAnalizatorTest_test14 - 2018.04.22 at 22h 00m 03s.xml">
-      <configuration name="LexicalAnalizatorTest.test14" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="LexicalAnalizatorTest_test14 - 2018.04.22 at 22h 00m 59s.xml">
-      <configuration name="LexicalAnalizatorTest.test14" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="LexicalAnalizatorTest_test14 - 2018.04.22 at 22h 02m 01s.xml">
-      <configuration name="LexicalAnalizatorTest.test14" configurationId="JUnit" />
+    <history-entry file="LexicalAnalizatorTest - 2018.04.26 at 23h 53m 23s.xml">
+      <configuration name="LexicalAnalizatorTest" configurationId="JUnit" />
     </history-entry>
     <history-entry file="LexicalAnalizatorTest_test14 - 2018.04.22 at 22h 02m 37s.xml">
       <configuration name="LexicalAnalizatorTest.test14" configurationId="JUnit" />
@@ -551,35 +550,49 @@
     <history-entry file="LexicalAnalizatorTest_test14 - 2018.04.22 at 22h 02m 50s.xml">
       <configuration name="LexicalAnalizatorTest.test14" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="LexicalAnalizatorTest_test14 - 2018.04.26 at 23h 14m 23s.xml">
+      <configuration name="LexicalAnalizatorTest.test14" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="LexicalAnalizatorTest_test14 - 2018.04.26 at 23h 14m 50s.xml">
+      <configuration name="LexicalAnalizatorTest.test14" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="LexicalAnalizatorTest_test14 - 2018.04.26 at 23h 15m 39s.xml">
+      <configuration name="LexicalAnalizatorTest.test14" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="LexicalAnalizatorTest_test14 - 2018.04.26 at 23h 15m 44s.xml">
+      <configuration name="LexicalAnalizatorTest.test14" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="LexicalAnalyserTest - 2018.04.26 at 23h 58m 00s.xml">
+      <configuration name="LexicalAnalyserTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1857" height="1092" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32939914" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32939914" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32939914" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25262576" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25538972" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39914164" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32939914" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32946378" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -619,122 +632,24 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/test/java/ru/spbau/mit/alyokhina/LexicalAnalizatorTest.java</url>
-          <line>146</line>
-          <properties class="ru.spbau.mit.alyokhina.LexicalAnalizatorTest" method="test7">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="79" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/spbau/mit/alyokhina/Ident.java</url>
-          <line>32</line>
-          <properties />
-          <option name="timeStamp" value="98" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/spbau/mit/alyokhina/Ident.java</url>
-          <line>33</line>
-          <properties />
-          <option name="timeStamp" value="99" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/spbau/mit/alyokhina/Ident.java</url>
-          <line>34</line>
-          <properties />
-          <option name="timeStamp" value="100" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/spbau/mit/alyokhina/Num.java</url>
-          <line>37</line>
-          <properties />
-          <option name="timeStamp" value="122" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/spbau/mit/alyokhina/Num.java</url>
-          <line>38</line>
-          <properties />
-          <option name="timeStamp" value="123" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/spbau/mit/alyokhina/Num.java</url>
-          <line>39</line>
-          <properties />
-          <option name="timeStamp" value="124" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/spbau/mit/alyokhina/Num.java</url>
-          <line>41</line>
-          <properties />
-          <option name="timeStamp" value="125" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/spbau/mit/alyokhina/Num.java</url>
-          <line>42</line>
-          <properties />
-          <option name="timeStamp" value="126" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/spbau/mit/alyokhina/Num.java</url>
-          <line>43</line>
-          <properties />
-          <option name="timeStamp" value="127" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/spbau/mit/alyokhina/Num.java</url>
-          <line>40</line>
-          <properties />
-          <option name="timeStamp" value="128" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/spbau/mit/alyokhina/Num.java</url>
-          <line>44</line>
-          <properties />
-          <option name="timeStamp" value="129" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/spbau/mit/alyokhina/Num.java</url>
-          <line>46</line>
-          <properties />
-          <option name="timeStamp" value="130" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/spbau/mit/alyokhina/Num.java</url>
-          <line>47</line>
-          <properties />
-          <option name="timeStamp" value="131" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="133" />
+      <option name="time" value="134" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/spbau/mit/alyokhina/Literal.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/spbau/mit/alyokhina/LexicalAnalyser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-192">
-          <caret line="27" column="16" lean-forward="false" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
-          <folding>
-            <element signature="e#438#439#0" expanded="true" />
-            <element signature="e#496#497#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/spbau/mit/alyokhina/Token.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        <state relative-caret-position="630">
+          <caret line="37" column="25" lean-forward="false" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/rt.jar!/java/lang/String.class">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/spbau/mit/alyokhina/LexerException.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="215" column="0" lean-forward="false" selection-start-line="215" selection-start-column="0" selection-end-line="215" selection-end-column="0" />
+        <state relative-caret-position="90">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -745,6 +660,14 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/spbau/mit/alyokhina/Colon.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="32" column="36" lean-forward="true" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -760,7 +683,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="468">
           <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#474#475#0" expanded="true" />
+            <element signature="e#557#558#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -780,44 +706,139 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/spbau/mit/alyokhina/Colon.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/spbau/mit/alyokhina/Operator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="32" column="36" lean-forward="true" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
+        <state relative-caret-position="936">
+          <caret line="52" column="13" lean-forward="false" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/ru/spbau/mit/alyokhina/LexicalAnalizatorTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/spbau/mit/alyokhina/Token.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-286">
-          <caret line="151" column="41" lean-forward="false" selection-start-line="151" selection-start-column="41" selection-end-line="151" selection-end-column="41" />
+        <state relative-caret-position="36">
+          <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/rt.jar!/java/lang/String.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="215" column="0" lean-forward="false" selection-start-line="215" selection-start-column="0" selection-end-line="215" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/spbau/mit/alyokhina/Bracket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-57">
+          <caret line="5" column="4" lean-forward="false" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/spbau/mit/alyokhina/Colon.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="22" column="31" lean-forward="true" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/spbau/mit/alyokhina/KeyWord.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="15" column="24" lean-forward="false" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="24" />
+          <folding>
+            <element signature="e#474#475#0" expanded="true" />
+            <element signature="e#557#558#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/spbau/mit/alyokhina/LexerException.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        <state relative-caret-position="36">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/spbau/mit/alyokhina/LexicalAnalizator.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/spbau/mit/alyokhina/LexicalAnalyser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="37" column="25" lean-forward="true" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
+        <state relative-caret-position="18">
+          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/spbau/mit/alyokhina/Literal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="25" column="9" lean-forward="false" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
+          <folding>
+            <element signature="e#438#439#0" expanded="true" />
+            <element signature="e#520#521#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/spbau/mit/alyokhina/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="24" column="13" lean-forward="true" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/spbau/mit/alyokhina/Num.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="32" column="9" lean-forward="true" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/spbau/mit/alyokhina/Operator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="605">
-          <caret line="52" column="13" lean-forward="false" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
+        <state relative-caret-position="-525">
+          <caret line="30" column="35" lean-forward="true" selection-start-line="30" selection-start-column="35" selection-end-line="30" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/spbau/mit/alyokhina/Ident.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="24" column="18" lean-forward="false" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/ru/spbau/mit/alyokhina/LexicalAnalyserTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="8" column="28" lean-forward="false" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LexicalAnalyzer.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="17" column="9" lean-forward="false" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="29" column="43" lean-forward="false" selection-start-line="29" selection-start-column="43" selection-end-line="29" selection-end-column="43" />
           <folding />
         </state>
       </provider>

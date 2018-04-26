@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ru.spbau.mit.alyokhina.LexicalAnalizatorTest" time="0.012" tests="13" errors="7" skipped="0" failures="0">
+<testsuite name="ru.spbau.mit.alyokhina.LexicalAnalyserTest" time="0.007" tests="13" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64"/>
@@ -59,49 +59,17 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase name="test10" classname="ru.spbau.mit.alyokhina.LexicalAnalizatorTest" time="0.003"/>
-  <testcase name="test11" classname="ru.spbau.mit.alyokhina.LexicalAnalizatorTest" time="0"/>
-  <testcase name="test12" classname="ru.spbau.mit.alyokhina.LexicalAnalizatorTest" time="0"/>
-  <testcase name="test13" classname="ru.spbau.mit.alyokhina.LexicalAnalizatorTest" time="0"/>
-  <testcase name="test1" classname="ru.spbau.mit.alyokhina.LexicalAnalizatorTest" time="0.005">
-    <error message="ru/spbau/mit/alyokhina/LexicalAnalizator" type="java.lang.NoClassDefFoundError">java.lang.NoClassDefFoundError: ru/spbau/mit/alyokhina/LexicalAnalizator
-	at java.net.URLClassLoader.findClass(URLClassLoader.java:381)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
-	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:338)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
-	at ru.spbau.mit.alyokhina.LexicalAnalizatorTest.test1(LexicalAnalizatorTest.java:12)
-</error>
-  </testcase>
-  <testcase name="test2" classname="ru.spbau.mit.alyokhina.LexicalAnalizatorTest" time="0">
-    <error message="ru/spbau/mit/alyokhina/LexicalAnalizator" type="java.lang.NoClassDefFoundError">java.lang.NoClassDefFoundError: ru/spbau/mit/alyokhina/LexicalAnalizator
-	at ru.spbau.mit.alyokhina.LexicalAnalizatorTest.test2(LexicalAnalizatorTest.java:34)
-</error>
-  </testcase>
-  <testcase name="test3" classname="ru.spbau.mit.alyokhina.LexicalAnalizatorTest" time="0.001">
-    <error message="ru/spbau/mit/alyokhina/LexicalAnalizator" type="java.lang.NoClassDefFoundError">java.lang.NoClassDefFoundError: ru/spbau/mit/alyokhina/LexicalAnalizator
-	at ru.spbau.mit.alyokhina.LexicalAnalizatorTest.test3(LexicalAnalizatorTest.java:58)
-</error>
-  </testcase>
-  <testcase name="test4" classname="ru.spbau.mit.alyokhina.LexicalAnalizatorTest" time="0">
-    <error message="ru/spbau/mit/alyokhina/LexicalAnalizator" type="java.lang.NoClassDefFoundError">java.lang.NoClassDefFoundError: ru/spbau/mit/alyokhina/LexicalAnalizator
-	at ru.spbau.mit.alyokhina.LexicalAnalizatorTest.test4(LexicalAnalizatorTest.java:86)
-</error>
-  </testcase>
-  <testcase name="test5" classname="ru.spbau.mit.alyokhina.LexicalAnalizatorTest" time="0.001">
-    <error message="ru/spbau/mit/alyokhina/LexicalAnalizator" type="java.lang.NoClassDefFoundError">java.lang.NoClassDefFoundError: ru/spbau/mit/alyokhina/LexicalAnalizator
-	at ru.spbau.mit.alyokhina.LexicalAnalizatorTest.test5(LexicalAnalizatorTest.java:101)
-</error>
-  </testcase>
-  <testcase name="test6" classname="ru.spbau.mit.alyokhina.LexicalAnalizatorTest" time="0">
-    <error message="ru/spbau/mit/alyokhina/LexicalAnalizator" type="java.lang.NoClassDefFoundError">java.lang.NoClassDefFoundError: ru/spbau/mit/alyokhina/LexicalAnalizator
-	at ru.spbau.mit.alyokhina.LexicalAnalizatorTest.test6(LexicalAnalizatorTest.java:124)
-</error>
-  </testcase>
-  <testcase name="test7" classname="ru.spbau.mit.alyokhina.LexicalAnalizatorTest" time="0">
-    <error message="ru/spbau/mit/alyokhina/LexicalAnalizator" type="java.lang.NoClassDefFoundError">java.lang.NoClassDefFoundError: ru/spbau/mit/alyokhina/LexicalAnalizator
-	at ru.spbau.mit.alyokhina.LexicalAnalizatorTest.test7(LexicalAnalizatorTest.java:147)
-</error>
-  </testcase>
-  <testcase name="test8" classname="ru.spbau.mit.alyokhina.LexicalAnalizatorTest" time="0.002"/>
-  <testcase name="test9" classname="ru.spbau.mit.alyokhina.LexicalAnalizatorTest" time="0"/>
+  <testcase name="test10" classname="ru.spbau.mit.alyokhina.LexicalAnalyserTest" time="0.002"/>
+  <testcase name="test11" classname="ru.spbau.mit.alyokhina.LexicalAnalyserTest" time="0"/>
+  <testcase name="test12" classname="ru.spbau.mit.alyokhina.LexicalAnalyserTest" time="0"/>
+  <testcase name="test13" classname="ru.spbau.mit.alyokhina.LexicalAnalyserTest" time="0"/>
+  <testcase name="test1" classname="ru.spbau.mit.alyokhina.LexicalAnalyserTest" time="0.003"/>
+  <testcase name="test2" classname="ru.spbau.mit.alyokhina.LexicalAnalyserTest" time="0"/>
+  <testcase name="test3" classname="ru.spbau.mit.alyokhina.LexicalAnalyserTest" time="0.001"/>
+  <testcase name="test4" classname="ru.spbau.mit.alyokhina.LexicalAnalyserTest" time="0"/>
+  <testcase name="test5" classname="ru.spbau.mit.alyokhina.LexicalAnalyserTest" time="0"/>
+  <testcase name="test6" classname="ru.spbau.mit.alyokhina.LexicalAnalyserTest" time="0.001"/>
+  <testcase name="test7" classname="ru.spbau.mit.alyokhina.LexicalAnalyserTest" time="0"/>
+  <testcase name="test8" classname="ru.spbau.mit.alyokhina.LexicalAnalyserTest" time="0"/>
+  <testcase name="test9" classname="ru.spbau.mit.alyokhina.LexicalAnalyserTest" time="0"/>
 </testsuite>
