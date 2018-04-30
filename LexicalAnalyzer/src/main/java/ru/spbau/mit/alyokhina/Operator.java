@@ -20,7 +20,7 @@ public class Operator implements Token {
         }
         if (pos < data.length()) {
             char c1 = data.charAt(pos);
-            if (c1 == '+' || c1 == '-' || c1 == '*' || c1 == '/' || c1 == '%' || c1 == '>' || c1 == '<') {
+            if (c1 == '+' || c1 == '^' || c1 == '-' || c1 == '*' || c1 == '/' || c1 == '%' || c1 == '>' || c1 == '<') {
                 boolean flag = !Ident.isIdent(data, pos+1).equals("");
                 flag = flag || Colon.isColon(data.charAt(pos+1));
                 flag = flag || Bracket.isBracket(data.charAt(pos+1));

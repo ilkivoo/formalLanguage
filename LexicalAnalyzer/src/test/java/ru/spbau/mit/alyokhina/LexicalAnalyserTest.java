@@ -205,4 +205,11 @@ public class LexicalAnalyserTest {
         assertEquals("true", str);
     }
 
+    @Test
+    public void test14() throws Exception {
+        LexicalAnalyser la = new LexicalAnalyser("(42^(24-156)*123)");
+        for (Token token : la.getTokens()) {
+            token.print();
+        }
+    }
 }

@@ -25,6 +25,9 @@ public class Ident implements Token{
             if (data.charAt(i) == '_' || (data.charAt(i) >= 'a' && data.charAt(i) <= 'z') || (data.charAt(i) >= 'A' && data.charAt(i) <= 'Z')) {
                 sb.append(data.charAt(i));
             }
+            else {
+                return "";
+            }
             i++;
             while (i < data.length() && check(data.charAt(i))) {
                 sb.append(data.charAt(i));

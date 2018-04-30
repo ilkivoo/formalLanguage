@@ -34,7 +34,7 @@ public class LexicalAnalyser {
         }
         result = new ArrayList<>();
         skipWhiteSpace();
-        skipComments();
+        //skipComments();
         while (size < data.length()) {
             if (Colon.isColon(data.charAt(size))) {
                 Colon colon = new Colon(curLine, curPos, curPos);
@@ -81,7 +81,7 @@ public class LexicalAnalyser {
                 }
             }
             skipWhiteSpace();
-            skipComments();
+            //skipComments();
         }
         return result;
     }
