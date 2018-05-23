@@ -38,9 +38,15 @@
 			x = x + 2;
 		end
 
+## Оператор while
 
+* while условие do тело 
+* Телом считается код, который 
+			1.начинается на begin, а заканчивается на соответствующий end
+			или
+			2. или до ближайшей ;
 
-# Пример ( больше примеров в src/main/resources)
+## Пример ( больше примеров в src/main/resources)
 
 function swap (x1, x2)
 		begin
@@ -65,3 +71,14 @@ main
 		write x;
 		end
 	end
+
+
+
+
+## Добавлен синтаксический сахар
+
+* identifier++ 
+	identifier := identifier + 1;
+
+* elif = else if
+* read x1, x2, x3 = begin read x1; read x2; read x3; end
