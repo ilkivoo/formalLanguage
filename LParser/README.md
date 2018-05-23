@@ -95,13 +95,12 @@
 
 ## Добавлен синтаксический сахар
 
-	1) identifier++ 
+		1) identifier++ 
 * identifier := identifier + 1;
-		
-		
-	2) elif
+
+		2)elif
 * else if
 		
 		
-	3)read x1, x2, x3
+		3)read x1, x2, x3
 * begin read x1; read x2; read x3; end
