@@ -48,28 +48,46 @@
 
 ## Пример ( больше примеров в src/main/resources)
 
-function swap (x1, x2)
+
+	function swap (x1, x2)
+
 		begin
+
 		x3:=x1;
 
 		x2:=x3;
+
 		end
 
 
-main
+	main
+
 	begin
+
 	read x1;
+	
 	read x2;
+	
 	x3:=0;
+	
 	sum(x1, x2, x3);
+	
 	swap(x1, x2);
+	
 	if cond then
+	
 		x := x + 1;
+	
 	else
+	
 		begin
+	
 		y := y + 1;
+	
 		write x;
+	
 		end
+	
 	end
 
 
