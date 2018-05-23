@@ -1,0 +1,4 @@
+main
+begin
+x:=x+1
+end

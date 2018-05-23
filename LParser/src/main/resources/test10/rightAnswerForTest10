@@ -1,0 +1,28 @@
+└── main
+    ├── if
+    │   ├── conditional
+    │   │   ├── cond1
+    │   ├── If body
+    │   │   ├── if
+    │   │   │   ├── conditional
+    │   │   │   │   ├── cond2
+    │   │   │   ├── If body
+    │   │   │   │   ├── read
+    │   │   │   │   │   ├── x1
+    │   │   │   │   ├── read
+    │   │   │   │   │   ├── y1
+    │   │   │   ├── Else body
+    │   │   │   │   ├── read
+    │   │   │   │   │   ├── x2
+    │   ├── Else body
+    │   │   ├── if
+    │   │   │   ├── conditional
+    │   │   │   │   ├── cond3
+    │   │   │   ├── If body
+    │   │   │   │   ├── read
+    │   │   │   │   │   ├── x3
+    │   │   │   │   ├── read
+    │   │   │   │   │   ├── x4
+    │   │   │   ├── Else body
+    │   │   │   │   ├── read
+    │   │   │   │   │   ├── x5
