@@ -29,12 +29,11 @@ public class Main {
                 LexicalAnalyser lexicalAnalyser = new LexicalAnalyser(data);
                 ArrayList<Token> arrayList = lexicalAnalyser.getTokens();
                 ArrayList<Node> al = Parse.parse(arrayList);
-                FileWriter fileWriter = new FileWriter("1.txt", false);
+                FileWriter fileWriter = new FileWriter(argv[0] + ".txt", false);
                 for (Node node : al) {
                     node.print(fileWriter);
                     fileWriter.write("\n\n\n\n");
                     fileWriter.flush();
-                    System.out.println("\n\n\n\n");
                 }
             }
             catch (IOException | LexerException  | ParserException e) {
