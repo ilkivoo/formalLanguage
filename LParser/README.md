@@ -62,33 +62,33 @@
 
 	main
 
-	begin
-
-	read x1;
-	
-	read x2;
-	
-	x3:=0;
-	
-	sum(x1, x2, x3);
-	
-	swap(x1, x2);
-	
-	if cond then
-	
-		x := x + 1;
-	
-	else
-	
 		begin
-	
-		y := y + 1;
-	
-		write x;
-	
+
+		read x1;
+		
+		read x2;
+		
+		x3:=0;
+		
+		sum(x1, x2, x3);
+		
+		swap(x1, x2);
+		
+		if cond then
+		
+			x := x + 1;
+		
+		else
+		
+			begin
+		
+			y := y + 1;
+		
+			write x;
+		
+			end
+		
 		end
-	
-	end
 
 
 
