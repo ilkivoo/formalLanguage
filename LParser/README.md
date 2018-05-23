@@ -96,7 +96,12 @@
 ## Добавлен синтаксический сахар
 
 * identifier++ 
-	identifier := identifier + 1;
-
-* elif = else if
-* read x1, x2, x3 = begin read x1; read x2; read x3; end
+		identifier := identifier + 1;
+		
+		
+* elif
+		else if
+		
+		
+* read x1, x2, x3
+		begin read x1; read x2; read x3; end
