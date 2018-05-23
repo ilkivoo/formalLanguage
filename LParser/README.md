@@ -104,5 +104,5 @@
 * else if
 		
 		
-		3)read x1, x2, x3ж
+		3)read x1, x2, x3;
 * begin read x1; read x2; read x3; end
