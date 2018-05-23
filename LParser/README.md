@@ -23,6 +23,7 @@
 			2. или до ближайшей ;
 
 Т.е  этот код на С++    
+
 	if (flag)
 		if (x) 
 			x = x + 1;
@@ -30,6 +31,7 @@
 			x = x + 2;
 
 На языке L будет выглядеть как
+
 	if (flag) 
 		begin
 		if (x)
@@ -102,5 +104,5 @@
 * else if
 		
 		
-		3)read x1, x2, x3
+		3)read x1, x2, x3ж
 * begin read x1; read x2; read x3; end
