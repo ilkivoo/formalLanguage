@@ -30,7 +30,7 @@ public class Node {
         }
     }
 
-    public ArrayList<Node> getChildren() {
+    ArrayList<Node> getChildren() {
         return children;
     }
 }

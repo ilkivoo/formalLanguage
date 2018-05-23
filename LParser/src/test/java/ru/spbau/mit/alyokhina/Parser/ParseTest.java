@@ -26,7 +26,7 @@ public class ParseTest {
             tree.print(fileWriter);
         }
 
-        assertEquals(readUsingFiles("src/main/resources/test1/rightAnswerForTest1"), readUsingFiles("src/main/resources/test1/test1.out"));
+       assertEquals(readUsingFiles("src/main/resources/test1/rightAnswerForTest1"), readUsingFiles("src/main/resources/test1/test1.out"));
     }
 
     @Test
@@ -158,16 +158,5 @@ public class ParseTest {
 
         assertEquals(readUsingFiles("src/main/resources/test10/rightAnswerForTest10"), readUsingFiles("src/main/resources/test10/test10.out"));
     }
-    @Test
-    public void test11() throws Exception {
-        String data = readUsingFiles("src/main/resources/example.in");
-        LexicalAnalyser lexicalAnalyser = new LexicalAnalyser(data);
-        ArrayList<Token> tokens= lexicalAnalyser.getTokens();
-        ArrayList<Node> trees = Parse.parse(tokens);
-        FileWriter fileWriter = new FileWriter("src/main/resources/example.out", false);
-        for (Node tree:trees) {
-            tree.print(fileWriter);
-        }
 
-    }
 }

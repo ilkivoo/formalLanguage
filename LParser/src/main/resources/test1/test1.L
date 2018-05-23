@@ -1,4 +1,8 @@
 main
 begin
-x:=x+1
+while x do
+begin
+write x;
+read y;
+end
 end

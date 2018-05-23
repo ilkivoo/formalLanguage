@@ -2,27 +2,27 @@
     ├── if
     │   ├── conditional
     │   │   ├── cond1
-    │   ├── If body
+    │   ├── body
     │   │   ├── if
     │   │   │   ├── conditional
     │   │   │   │   ├── cond2
-    │   │   │   ├── If body
+    │   │   │   ├── body
     │   │   │   │   ├── read
     │   │   │   │   │   ├── x1
     │   │   │   │   ├── read
     │   │   │   │   │   ├── y1
-    │   │   │   ├── Else body
+    │   │   │   ├── else
     │   │   │   │   ├── read
     │   │   │   │   │   ├── x2
-    │   ├── Else body
+    │   ├── else
     │   │   ├── if
     │   │   │   ├── conditional
     │   │   │   │   ├── cond3
-    │   │   │   ├── If body
+    │   │   │   ├── body
     │   │   │   │   ├── read
     │   │   │   │   │   ├── x3
     │   │   │   │   ├── read
     │   │   │   │   │   ├── x4
-    │   │   │   ├── Else body
+    │   │   │   ├── else
     │   │   │   │   ├── read
     │   │   │   │   │   ├── x5

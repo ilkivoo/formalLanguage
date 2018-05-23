@@ -45,10 +45,10 @@ public class Parse {
                 while (j < tokens.size() && !tokens.get(j).getName().equals(";")) {
                     if (tokens.get(j) instanceof Colon && tokens.get(j).getName().equals(",")) {
                         Colon colon = new Colon(tokens.get(j).getLine(), tokens.get(j).getStart(), tokens.get(j).getEnd(), ';');
-                        KeyWord keyWord = new KeyWord(tokens.get(j).getLine(), tokens.get(j).getStart(), tokens.get(j).getEnd(),"read");
+                        KeyWord keyWord = new KeyWord(tokens.get(j).getLine(), tokens.get(j).getStart(), tokens.get(j).getEnd(), "read");
                         tokens.remove(j);
                         tokens.add(j, colon);
-                        tokens.add(j+1, keyWord);
+                        tokens.add(j + 1, keyWord);
                         flag = true;
                     }
                     j += 1;
@@ -58,7 +58,7 @@ public class Parse {
                 }
 
                 if (flag && end != -1) {
-                    KeyWord begKeyWord  = new KeyWord(tokens.get(i).getLine(), tokens.get(i).getStart(), tokens.get(i).getEnd(),"begin");
+                    KeyWord begKeyWord = new KeyWord(tokens.get(i).getLine(), tokens.get(i).getStart(), tokens.get(i).getEnd(), "begin");
                     KeyWord endKeyWord = new KeyWord(tokens.get(end).getLine(), tokens.get(end).getStart(), tokens.get(end).getEnd(), "end");
 
                     tokens.add(end + 1, endKeyWord);
@@ -117,7 +117,7 @@ public class Parse {
     }
 
 
-    static Node parseFunction(ArrayList<Token> tokens) throws ParserException {
+    private static Node parseFunction(ArrayList<Token> tokens) throws ParserException {
         if (tokens.size() < 5) {
             throw new ParserException("Error in line: " + ((Integer) tokens.get(0).getLine()).toString()
                     + " position: " + ((Integer) tokens.get(0).getStart()).toString());
@@ -177,7 +177,7 @@ public class Parse {
         return result;
     }
 
-    static Node parseMain(ArrayList<Token> tokens) throws ParserException {
+    private static Node parseMain(ArrayList<Token> tokens) throws ParserException {
         if (!(tokens.get(0) instanceof KeyWord)) {
             throw new ParserException("Error in line: " + ((Integer) tokens.get(0).getLine()).toString()
                     + " position: " + ((Integer) tokens.get(0).getStart()).toString());
@@ -202,8 +202,43 @@ public class Parse {
         return parseBody(tokens, "main");
     }
 
+    private static ArrayList<Token> findBody(ArrayList<Token> tokens, int begin, String str) throws ParserException {
+        int i = begin;
+        ArrayList<Token> result = new ArrayList<>();
+        String endd;
+        if (i < tokens.size() && tokens.get(i).getName().equals("begin")) {
+            endd = "end";
+        } else {
+            endd = ";";
+        }
+        endd = str.equals("") ? endd : str;
 
-    static Node parseBody(ArrayList<Token> tokens, String name) throws ParserException {
+        int balance = 0;
+        result.add(tokens.get(i));
+        i++;
+        while (i < tokens.size() && !(balance == 0 && tokens.get(i).getName().equals(endd))) {
+            if (tokens.get(i).getName().equals("begin")) {
+                balance++;
+            }
+            if (tokens.get(i).getName().equals("end")) {
+                balance--;
+            }
+            if (balance < 0) {
+                throw new ParserException("Error in line: " + ((Integer) tokens.get(tokens.size() - 1).getLine()).toString()
+                        + " position: " + ((Integer) tokens.get(tokens.size() - 1).getStart()).toString() + " нарушен баланс операторных скобок");
+            }
+            result.add(tokens.get(i));
+            i++;
+        }
+        if (balance != 0 || i == tokens.size()) {
+            throw new ParserException("Error in line: " + ((Integer) tokens.get(tokens.size() - 1).getLine()).toString()
+                    + " position: " + ((Integer) tokens.get(tokens.size() - 1).getStart()).toString() + " нарушен баланс операторных скобок");
+        }
+        result.add(tokens.get(i));
+        return result;
+    }
+
+    private static Node parseBody(ArrayList<Token> tokens, String name) throws ParserException {
         int i = 0;
         Node result = new Node(new ArrayList<Node>(), name);
         while (i < tokens.size()) {
@@ -212,248 +247,68 @@ public class Parse {
                         + " position: " + ((Integer) tokens.get(i).getEnd()).toString() + " найден разделитель");
             } else if (tokens.get(i) instanceof KeyWord) {
                 KeyWord keyWord = (KeyWord) tokens.get(i);
-                if (keyWord.getName().equals("read")) {
-                    ArrayList<Token> action = new ArrayList<>();
-                    int j = i;
-                    while (j < tokens.size() && !tokens.get(j).getName().equals(";")) {
-                        action.add(tokens.get(j));
-                        j++;
+                switch (keyWord.getName()) {
+                    case "read": {
+                        ArrayList<Token> action;
+                        action = findBody(tokens, i + 1, ";");
+                        i += action.size() + 1;
+                        result.getChildren().add(parseRead(action));
+                        break;
                     }
-                    i = j + 1;
-                    result.getChildren().add(parseRead(action));
-                } else if (keyWord.getName().equals("write")) {
-                    ArrayList<Token> action = new ArrayList<>();
-                    int j = i;
-                    while (j < tokens.size() && !tokens.get(j).getName().equals(";")) {
-                        action.add(tokens.get(j));
-                        j++;
+                    case "write": {
+                        ArrayList<Token> action;
+                        action = findBody(tokens, i + 1, ";");
+                        i += action.size() + 1;
+                        result.getChildren().add(parseWrite(action));
+                        break;
                     }
-                    Node write = new Node(new ArrayList<Node>(), "write");
-                    action.remove(0);
-                    write.getChildren().add(parseExpressions(action));
-                    result.getChildren().add(write);
-                    i = j + 1;
-                } else if (keyWord.getName().equals("if")) {
-                    ArrayList<Token> action = new ArrayList<>();
-                    action.add(keyWord);
-                    int j = i;
-                    j++;
-                    while (j < tokens.size() && !tokens.get(j).getName().equals("then")) {
-                        action.add(tokens.get(j));
-                        j++;
-                    }
-                    if (j >= tokens.size()) {
-                        throw new ParserException("Error in line: " + ((Integer) tokens.get(tokens.size() - 1).getLine()).toString()
-                                + " position: " + ((Integer) tokens.get(tokens.size() - 1).getEnd()).toString() + " ожидался then");
-                    }
-                    //Добавили then
-                    action.add(tokens.get(j));
-
-                    i = j; // i указывает на then
-                    j++;
-                    if (j >= tokens.size()) {
-                        throw new ParserException("Error in line: " + ((Integer) tokens.get(j).getLine()).toString()
-                                + " position: " + ((Integer) tokens.get(j).getEnd()).toString() + " пустое тело if");
-                    }
-                    if (tokens.get(j).getName().equals("begin")) {
-                        j++;
-                        int b = 1;
-                        while (j < tokens.size() && b != 0) {
-                            if (tokens.get(j).getName().equals("begin")) {
-                                b++;
-                            }
-                            if (tokens.get(j).getName().equals("end")) {
-                                b--;
-                            }
-                            if (b < 0) {
-                                throw new ParserException("Error in line: " + ((Integer) tokens.get(j).getLine()).toString()
-                                        + " position: " + ((Integer) tokens.get(j).getStart()).toString() + " нарушен баланс операторных скобок");
-                            }
-                            if (b != 0) {
-                                action.add(tokens.get(j));
-                            }
-                            j++;
-                        }
-                        if (b != 0) {
-                            throw new ParserException("Error in line: " + ((Integer) tokens.get(tokens.size() - 1).getLine()).toString()
-                                    + " position: " + ((Integer) tokens.get(tokens.size() - 1).getStart()).toString() + " нарушен баланс операторных скобок");
-                        }
-                        i = j;//указывает на слудующий за end токен
-
-                    } else {
-                        int balance1 = 0, balance2 = 0;
-                        while (j < tokens.size() && (!tokens.get(j).getName().equals(";")|| balance1 != 0 || balance2!= 0)) {
-                            if (tokens.get(j).getName().equals("begin")) {
-                                balance1++;
-                            }
-                            if (tokens.get(j).getName().equals("end")) {
-                                balance1--;
-                            }
-                            if (balance1 < 0) {
-                                throw new ParserException("Error in line: " + ((Integer) tokens.get(j).getLine()).toString()
-                                        + " position: " + ((Integer) tokens.get(j).getStart()).toString() + " нарушен баланс операторных скобок");
-                            }
+                    case "if": {
+                        ArrayList<Token> action = new ArrayList<>();
+                        action.add(keyWord);
+                        action.addAll(findBody(tokens, i + 1, "then"));
+                        action.addAll(findBody(tokens, i + action.size(), ""));
+                        int j = i + action.size();
+                        if (j < tokens.size() && tokens.get(j).getName().equals("else")) {
                             action.add(tokens.get(j));
-                            j++;
+                            action.addAll(findBody(tokens, j + 1, ""));
                         }
-                        if (j < tokens.size()) {
-                            action.add(tokens.get(j));
-                        }
-                        i = j + 1; // указывает за следующим за ;
-                        j++;
+                        i += action.size();
+                        result.getChildren().add(parseIf(action));
+                        break;
                     }
-                    if (j < tokens.size() && tokens.get(j).getName().equals("else")) {
-                        action.add(tokens.get(j));
-                        i = j + 1; // следующий за else;
-                        j += 1;
-                        if (tokens.get(j).getName().equals("begin")) {
-                            j++;
-                            int b = 1;
-                            while (j < tokens.size() && b != 0) {
-                                if (tokens.get(j).getName().equals("begin")) {
-                                    b++;
-                                }
-                                if (tokens.get(j).getName().equals("end")) {
-                                    b--;
-                                }
-                                if (b < 0) {
-                                    throw new ParserException("Error in line: " + ((Integer) tokens.get(j).getLine()).toString()
-                                            + " position: " + ((Integer) tokens.get(j).getStart()).toString() + " нарушен баланс операторных скобок");
-                                }
-                                if (b != 0) {
-                                    action.add(tokens.get(j));
-                                }
-                                j++;
-                            }
-                            if (b != 0) {
-                                throw new ParserException("Error in line: " + ((Integer) tokens.get(tokens.size() - 1).getLine()).toString()
-                                        + " position: " + ((Integer) tokens.get(tokens.size() - 1).getStart()).toString() + " нарушен баланс операторных скобок");
-                            }
-                            i = j; // следующий за end
-                        } else {
-                            int balance = 0;
-                            while (j < tokens.size() && (!tokens.get(j).getName().equals(";") || balance != 0)) {
-                                if (tokens.get(j).getName().equals("begin")) {
-                                    balance++;
-                                }
-                                if (tokens.get(j).getName().equals("end")) {
-                                    balance--;
-                                }
-                                if (balance < 0) {
-                                    throw new ParserException("Error in line: " + ((Integer) tokens.get(j).getLine()).toString()
-                                            + " position: " + ((Integer) tokens.get(j).getStart()).toString() + " нарушен баланс операторных скобок");
-                                }
-                                action.add(tokens.get(j));
-                                j++;
-                            }
-                            if (j < tokens.size()) {
-                                action.add(tokens.get(j));
-                            }
-                            i = j + 1; //следующий за end;
-                        }
-                    }
-
-                    result.getChildren().add(parseIf(action));
-                } else if (keyWord.getName().equals("then") || keyWord.getName().equals("else") ||
-                        keyWord.getName().equals("do") || keyWord.getName().equals("function") ||
-                        keyWord.getName().equals("end") || keyWord.getName().equals("main")) {
-                    throw new ParserException("Error in line: " + ((Integer) keyWord.getLine()).toString()
-                            + " position: " + ((Integer) keyWord.getStart()).toString());
-                } else if (keyWord.getName().equals("begin")) {
-                    /*int j = i + 1;
-                    int b = 1;
-                    while (j < tokens.size() && b != 0) {
-                        if (tokens.get(j).getName().equals("begin")) {
-                            b++;
-                        }
-                        if (tokens.get(j).getName().equals("end")) {
-                            b--;
-                        }
-                        if (b < 0) {
-                            throw new ParserException("Error in line: " + ((Integer) tokens.get(j).getLine()).toString()
-                                    + " position: " + ((Integer) tokens.get(j).getStart()).toString() + " нарушен баланс операторных скобок");
-                        }
-
-                        j++;
-                    }
-                    if (b != 0) {
-                        throw new ParserException("Error in line: " + ((Integer) tokens.get(tokens.size() - 1).getLine()).toString()
-                                + " position: " + ((Integer) tokens.get(tokens.size() - 1).getStart()).toString() + " нарушен баланс операторных скобок");
-                    }
-                    tokens.remove(j - 1);
-                    tokens.remove(i);*/
-                    if (!tokens.get(tokens.size() - 1).getName().equals("end")) {
-                        throw new ParserException("Error in line: " + ((Integer) tokens.get(tokens.size() - 1).getLine()).toString()
-                                + " position: " + ((Integer) tokens.get(tokens.size() - 1).getStart()).toString() + " нарушен баланс операторных скобок");
-                    }
-                    else {
-                        tokens.remove(tokens.size() - 1);
+                    case "then":
+                    case "else":
+                    case "do":
+                    case "function":
+                    case "end":
+                    case "main":
+                        throw new ParserException("Error in line: " + ((Integer) keyWord.getLine()).toString()
+                                + " position: " + ((Integer) keyWord.getStart()).toString());
+                    case "begin": {
+                        ArrayList<Token> action = findBody(tokens, i, "end");
+                        int j = i + action.size() - 1;
+                        tokens.remove(j);
                         tokens.remove(i);
+                        break;
                     }
-                } else if (keyWord.getName().equals("while")) {
-                    ArrayList<Token> action = new ArrayList<>();
-                    action.add(keyWord);
-                    int j = i;
-                    j++;
-                    while (j < tokens.size() && !tokens.get(j).getName().equals("do")) {
-                        action.add(tokens.get(j));
-                        j++;
+                    case "while": {
+                        ArrayList<Token> action = new ArrayList<>();
+                        action.add(keyWord);
+                        action.addAll(findBody(tokens, i + 1, "do"));
+                        action.addAll(findBody(tokens, i + action.size(), ""));
+                        result.getChildren().add(parseWhile(action));
+                        i += action.size();
+                        break;
                     }
-                    if (j >= tokens.size()) {
-                        throw new ParserException("Error in line: " + ((Integer) tokens.get(tokens.size() - 1).getLine()).toString()
-                                + " position: " + ((Integer) tokens.get(tokens.size() - 1).getEnd()).toString() + " ожидался do");
-                    }
-                    //Добавили do
-                    action.add(tokens.get(j));
-
-                    i = j; // i указывает на do
-                    j++;
-                    if (j >= tokens.size()) {
-                        throw new ParserException("Error in line: " + ((Integer) tokens.get(j).getLine()).toString()
-                                + " position: " + ((Integer) tokens.get(j).getEnd()).toString() + " пустое тело while");
-                    }
-                    if (tokens.get(j).getName().equals("begin")) {
-                        j++;
-                        int b = 1;
-                        while (j < tokens.size() && b != 0) {
-                            if (tokens.get(j).getName().equals("begin")) {
-                                b++;
-                            }
-                            if (tokens.get(j).getName().equals("end")) {
-                                b--;
-                            }
-                            if (b < 0) {
-                                throw new ParserException("Error in line: " + ((Integer) tokens.get(j).getLine()).toString()
-                                        + " position: " + ((Integer) tokens.get(j).getStart()).toString() + " нарушен баланс операторных скобок");
-                            }
-                            if (b != 0) {
-                                action.add(tokens.get(j));
-                            }
-                            j++;
-                        }
-                        if (b != 0) {
-                            throw new ParserException("Error in line: " + ((Integer) tokens.get(tokens.size() - 1).getLine()).toString()
-                                    + " position: " + ((Integer) tokens.get(tokens.size() - 1).getStart()).toString() + " нарушен баланс операторных скобок");
-                        }
-                        i = j;//указывает на слудующий за end токен
-
-                    } else {
-                        while (j < tokens.size() && !tokens.get(j).getName().equals(";")) {
-                            action.add(tokens.get(j));
-                            j++;
-                        }
-                        i = j + 1; // указывает за следующим за ;
-                    }
-                    result.getChildren().add(parseWhile(action));
+                    default:
+                        throw new ParserException("Error in line: " + ((Integer) keyWord.getLine()).toString()
+                                + " position: " + ((Integer) keyWord.getStart()).toString());
                 }
             } else {
-                ArrayList<Token> action = new ArrayList<>();
-                int j = i;
-                while (j < tokens.size() && !tokens.get(j).getName().equals(";")) {
-                    action.add(tokens.get(j));
-                    j++;
-                }
-                i = j + 1;
+                ArrayList<Token> action = findBody(tokens, i, ";");
+                //удалить ;
+                i += action.size();
+                action.remove(action.size() - 1);
                 result.getChildren().add(parseExpressions(action));
             }
         }
@@ -461,10 +316,11 @@ public class Parse {
         return result;
     }
 
-    static Node parseRead(ArrayList<Token> tokens) throws ParserException {
+    private static Node parseRead(ArrayList<Token> tokens) throws ParserException {
         Node result = new Node(new ArrayList<Node>(), "read");
-        if (tokens.size() >= 2 && tokens.get(1) instanceof Ident) {
-            Ident ident = (Ident) tokens.get(1);
+
+        if (tokens.size() >= 2 && tokens.get(0) instanceof Ident && tokens.get(1).getName().equals(";")) {
+            Ident ident = (Ident) tokens.get(0);
             result.getChildren().add(new Node(new ArrayList<Node>(), ident.getName()));
         } else {
             throw new ParserException("Error in line: " + ((Integer) tokens.get(1).getLine()).toString()
@@ -473,8 +329,19 @@ public class Parse {
         return result;
     }
 
+    private static Node parseWrite(ArrayList<Token> tokens) throws ParserException {
+        Node write = new Node(new ArrayList<Node>(), "write");
+        if (tokens.get(tokens.size() - 1).getName().equals(";")) {
+            tokens.remove(tokens.size() - 1);
+        } else {
+            throw new ParserException("Error in line: " + ((Integer) tokens.get(tokens.size() - 1).getLine()).toString()
+                    + " position: " + ((Integer) tokens.get(tokens.size() - 1).getStart()).toString());
+        }
+        write.getChildren().add(parseExpressions(tokens));
+        return write;
+    }
 
-    static Node parseExpressions(ArrayList<Token> tokens) throws ParserException {
+    private static Node parseExpressions(ArrayList<Token> tokens) throws ParserException {
         if (tokens.size() == 0) {
             throw new ParserException("Expected expression");
         }
@@ -508,7 +375,7 @@ public class Parse {
     }
 
 
-    static Node parseOR(ArrayList<Token> tokens) throws ParserException {
+    private static Node parseOR(ArrayList<Token> tokens) throws ParserException {
         if (tokens.size() == 0) {
             return null;
         }
@@ -553,7 +420,7 @@ public class Parse {
         }
     }
 
-    static Node parseAND(ArrayList<Token> tokens) throws ParserException {
+    private static Node parseAND(ArrayList<Token> tokens) throws ParserException {
         if (tokens.size() == 0) {
             return null;
         }
@@ -597,7 +464,7 @@ public class Parse {
         }
     }
 
-    static Node parseEquals(ArrayList<Token> tokens) throws ParserException {
+    private static Node parseEquals(ArrayList<Token> tokens) throws ParserException {
         if (tokens.size() == 0) {
             return null;
         }
@@ -642,7 +509,7 @@ public class Parse {
     }
 
 
-    static Node parseCompare(ArrayList<Token> tokens) throws ParserException {
+    private static Node parseCompare(ArrayList<Token> tokens) throws ParserException {
         if (tokens.size() == 0) {
             return null;
         }
@@ -687,7 +554,7 @@ public class Parse {
         }
     }
 
-    static Node parseSum(ArrayList<Token> tokens) throws ParserException {
+    private static Node parseSum(ArrayList<Token> tokens) throws ParserException {
         if (tokens.size() == 0) {
             return null;
         }
@@ -731,7 +598,7 @@ public class Parse {
         }
     }
 
-    static Node parseMul(ArrayList<Token> tokens) throws ParserException {
+    private static Node parseMul(ArrayList<Token> tokens) throws ParserException {
         if (tokens.size() == 0) {
             return null;
         }
@@ -776,12 +643,11 @@ public class Parse {
         }
     }
 
-    static Node parsePow(ArrayList<Token> tokens) throws ParserException {
+    private static Node parsePow(ArrayList<Token> tokens) throws ParserException {
         if (tokens.size() == 0) {
             return null;
         }
         int balance = 0;
-        int ind = -1;
         for (int i = 0; i < tokens.size(); i++) {
             if (tokens.get(i).getName().equals("(")) {
                 balance++;
@@ -793,8 +659,8 @@ public class Parse {
                 throw new ParserException("Error in line: " + ((Integer) tokens.get(i).getLine()).toString()
                         + " position: " + ((Integer) tokens.get(i).getEnd()).toString() + " нарушен баланс скобок");
             }
-            if (balance == 0 && (tokens.get(i).getName().equals("&&"))) {
-                Node result = new Node(new ArrayList<Node>(), " " + tokens.get(ind).getName());
+            if (balance == 0 && (tokens.get(i).getName().equals("^"))) {
+                Node result = new Node(new ArrayList<Node>(), " ^");
                 ArrayList<Token> left = new ArrayList<>();
                 ArrayList<Token> right = new ArrayList<>();
                 for (int j = 0; j < i; j++) {
@@ -828,7 +694,7 @@ public class Parse {
     }
 
 
-    static Node parseFunctionCall(ArrayList<Token> tokens) throws ParserException {
+    private static Node parseFunctionCall(ArrayList<Token> tokens) throws ParserException {
         if (!(tokens.size() >= 3 && tokens.get(1).getName().equals("(") &&
                 tokens.get(tokens.size() - 1).getName().equals(")") && tokens.get(0) instanceof Ident)) {
             throw new ParserException("Error in line: " + ((Integer) tokens.get(0).getLine()).toString()
@@ -857,96 +723,60 @@ public class Parse {
         return result;
     }
 
-    static Node parseIf(ArrayList<Token> tokens) throws ParserException {
-        ArrayList<Token> cond = new ArrayList<>();
-        ArrayList<Token> body = new ArrayList<>();
-        ArrayList<Token> bodyElse = new ArrayList<>();
-        Node result = new Node(new ArrayList<Node>(), "if");
-        int i = 1;
-        while (i < tokens.size() && !tokens.get(i).getName().equals("then")) {
-            cond.add(tokens.get(i));
-            i++;
-        }
-        if (i == tokens.size()) {
-            throw new ParserException("Error in line: " + ((Integer) tokens.get(tokens.size() - 1).getLine()).toString()
-                    + " position: " + ((Integer) tokens.get(tokens.size() - 1).getEnd()).toString() + " ожидался then");
+    private static Node parseIf(ArrayList<Token> tokens) throws ParserException {
+        if (!tokens.get(0).getName().equals("if")) {
+            throw new ParserException("Error in line: " + ((Integer) tokens.get(0).getLine()).toString()
+                    + " position: " + ((Integer) tokens.get(0).getEnd()).toString() + " ожидался if");
         }
 
-        i++;
-        int balance = 1;
-        while (i < tokens.size() && !(tokens.get(i).getName().equals("else") && balance == 1)) {
-            if (tokens.get(i).getName().equals("if")) {
-                balance++;
-            }
-            if (tokens.get(i).getName().equals("else")) {
-                balance--;
-            }
-            if (balance < 0) {
-                throw new ParserException("Error in line: " + ((Integer) tokens.get(i).getLine()).toString()
-                        + " position: " + ((Integer) tokens.get(i).getStart()).toString() + " нарушен баланс операторных скобок");
-            }
-            body.add(tokens.get(i));
-            i++;
-        }
+        ArrayList<Token> cond = findBody(tokens, 1, "then");
+        int cur = cond.size() + 1;
 
-        if (body.isEmpty()) {
-            if (i == tokens.size()) {
-                throw new ParserException("Error in line: " + ((Integer) tokens.get(i).getLine()).toString()
-                        + " position: " + ((Integer) tokens.get(i).getEnd()).toString() + " пустой if");
-            }
-        }
-        Node condNode = new Node(new ArrayList<Node>(), "conditional");
-        Node bodyIf = new Node(new ArrayList<Node>(), "If body");
-        condNode.getChildren().add(parseExpressions(cond));
-        Node tmp = parseBody(body, "");
-        bodyIf.getChildren().addAll(tmp.getChildren());
-        result.getChildren().add(condNode);
-        result.getChildren().add(bodyIf);
-        if (i < tokens.size() && tokens.get(i).getName().equals("else")) {
-            Node bodyElseNode = new Node(new ArrayList<Node>(), "Else body");
-            i++;
-            while (i < tokens.size()) {
-                bodyElse.add(tokens.get(i));
-                i++;
-            }
-            tmp = parseBody(bodyElse, "");
-            bodyElseNode.getChildren().addAll(tmp.getChildren());
-            result.getChildren().add(bodyElseNode);
+        ArrayList<Token> body = findBody(tokens, cur, "");
+        cur = cond.size() + 1 + body.size();
+        Node result = new Node (new ArrayList<Node>(), "if");
+
+        Node nodeCond = new Node(new ArrayList<Node>(), "conditional");
+        //Удалить then
+        cond.remove(cond.size() - 1);
+        nodeCond.getChildren().add(parseExpressions(cond));
+
+        Node nodeBody = new Node(new ArrayList<Node>(), "body");
+        nodeBody.getChildren().addAll(parseBody(body, "").getChildren());
+
+        result.getChildren().add(nodeCond);
+        result.getChildren().add(nodeBody);
+
+        if (cur < tokens.size() && tokens.get(cur).getName().equals("else")) {
+            ArrayList<Token> bodyElse = findBody(tokens, cur + 1, "");
+            Node nodeElse = new Node(new ArrayList<Node>(), "else");
+            nodeElse .getChildren().addAll(parseBody(bodyElse, "").getChildren());
+            result.getChildren().add(nodeElse);
         }
         return result;
-
     }
 
-    static Node parseWhile(ArrayList<Token> tokens) throws ParserException {
-        ArrayList<Token> cond = new ArrayList<>();
-        ArrayList<Token> body = new ArrayList<>();
+    private static Node parseWhile(ArrayList<Token> tokens) throws ParserException {
+        if (!tokens.get(0).getName().equals("while")) {
+            throw new ParserException("Error in line: " + ((Integer) tokens.get(0).getLine()).toString()
+                    + " position: " + ((Integer) tokens.get(0).getEnd()).toString() + " ожидался while");
+        }
+        ArrayList<Token> cond = findBody(tokens, 1, "do");
+        ArrayList<Token> body = findBody(tokens, cond.size() + 1, "");
+
         Node result = new Node(new ArrayList<Node>(), "while");
-        int i = 1;
-        while (i < tokens.size() && !tokens.get(i).getName().equals("do")) {
-            cond.add(tokens.get(i));
-            i++;
-        }
-        if (i == tokens.size()) {
-            throw new ParserException("Error in line: " + ((Integer) tokens.get(tokens.size() - 1).getLine()).toString()
-                    + " position: " + ((Integer) tokens.get(tokens.size() - 1).getEnd()).toString() + " ожидался do");
-        }
-        i++;
-        while (i < tokens.size()) {
-            body.add(tokens.get(i));
-            i++;
-        }
-        if (body.isEmpty()) {
-            if (i == tokens.size()) {
-                throw new ParserException("Error in line: " + ((Integer) tokens.get(i).getLine()).toString()
-                        + " position: " + ((Integer) tokens.get(i).getEnd()).toString() + " пустой while");
-            }
-        }
+
         Node condNode = new Node(new ArrayList<Node>(), "conditional");
-        Node bodyIf = new Node(new ArrayList<Node>(), "while body");
+        Node bodyWhile = new Node(new ArrayList<Node>(), "while body");
+        //удалить do
+        cond.remove(cond.size() - 1);
+
         condNode.getChildren().add(parseExpressions(cond));
-        bodyIf.getChildren().add(parseBody(body, ""));
+        bodyWhile.getChildren().addAll(parseBody(body, "").getChildren());
+
         result.getChildren().add(condNode);
-        result.getChildren().add(bodyIf);
+        result.getChildren().add(bodyWhile);
+
         return result;
 
     }

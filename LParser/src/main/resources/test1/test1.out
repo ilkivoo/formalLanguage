@@ -1,6 +1,9 @@
 └── main
-    ├── :=
-    │   ├── x
-    │   ├──  +
+    ├── while
+    │   ├── conditional
     │   │   ├── x
-    │   │   ├── 1
+    │   ├── while body
+    │   │   ├── write
+    │   │   │   ├── x
+    │   │   ├── read
+    │   │   │   ├── y
