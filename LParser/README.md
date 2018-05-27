@@ -24,6 +24,7 @@ java -classpath ./target/classes/ ru.spbau.mit.alyokhina.Main <название 
 * if условие then тело else тело
 * Оператор if может быть без else
 * Телом считается код, который 
+			
 			1.начинается на begin, а заканчивается на соответствующий end
 			или
 			2. или до ближайшей ;
@@ -40,7 +41,7 @@ java -classpath ./target/classes/ ru.spbau.mit.alyokhina.Main <название 
 
 	if (flag) then
 		begin
-		if (x)
+		if (x) then
 			x := x + 1;
 		else
 			x := x + 2;
@@ -48,14 +49,16 @@ java -classpath ./target/classes/ ru.spbau.mit.alyokhina.Main <название 
 
 
 ##Будьте внимательны
-  	if (flag) then
-		  if (x)
-			  x := x + 1;
-		  else
-			  x := x + 2;
+	
+	if (flag) then
+		if (x)
+			x := x + 1;
+		else
+			x := x + 2;
 Такой код выдаст ошибку, потому что телом внешнего if будет считаться (до ближайшей ;)
+     
      if (x)
-			  x := x + 1;
+	x := x + 1;
 
 
 ## Оператор while
