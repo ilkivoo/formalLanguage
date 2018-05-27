@@ -1,8 +1,8 @@
 main
 begin
-while x do
+x := x + 1;
 begin
-write x;
-read y;
+x := x + 1;
+x := x + 1;
 end
 end

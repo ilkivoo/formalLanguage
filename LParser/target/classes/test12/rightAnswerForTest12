@@ -1,0 +1,23 @@
+└── main
+    ├── if
+    │   ├── conditional
+    │   │   ├── 42
+    │   ├── body
+    │   │   ├── write
+    │   │   │   ├── x
+    │   ├── else
+    │   │   ├── if
+    │   │   │   ├── conditional
+    │   │   │   │   ├── 13
+    │   │   │   ├── body
+    │   │   │   │   ├── read
+    │   │   │   │   │   ├── y
+    │   │   │   ├── else
+    │   │   │   │   ├── if
+    │   │   │   │   │   ├── conditional
+    │   │   │   │   │   │   ├──  <
+    │   │   │   │   │   │   │   ├── 666
+    │   │   │   │   │   │   │   ├── call f
+    │   │   │   │   │   ├── body
+    │   │   │   │   │   │   ├── write
+    │   │   │   │   │   │   │   ├── x

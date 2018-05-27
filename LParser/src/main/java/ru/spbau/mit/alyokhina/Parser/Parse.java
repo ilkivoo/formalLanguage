@@ -79,7 +79,8 @@ public class Parse {
                 KeyWord keyWord = (KeyWord) tokens.get(i);
                 if (keyWord.getName().equals("function") || keyWord.getName().equals("main")) {
                     ArrayList<Token> arrayList = new ArrayList<>();
-                    int balance = 0;
+                    int balance = 0, ind = -1, indKeyWord = -1;
+                    indKeyWord = i;
                     boolean flag = true, wasBegin = false;
                     for (int j = i + 1; j < tokens.size() && flag; j++) {
                         arrayList.add(tokens.get(j));
@@ -91,6 +92,7 @@ public class Parse {
                             if (thisKeyWord.getName().equals("begin")) {
                                 balance++;
                                 wasBegin = true;
+                                ind = (ind == -1) ? j : ind;
                             }
                         }
                         if (balance == 0 && wasBegin) {
@@ -98,14 +100,24 @@ public class Parse {
                             i = j;
                         }
                     }
-                    if (balance != 0 || !wasBegin) {
+                    if (balance != 0) {
                         throw new ParserException("Error in line: " + ((Integer) tokens.get(i).getLine()).toString()
-                                + " position: " + ((Integer) tokens.get(i).getStart()).toString());
+                                + " position: " + ((Integer) tokens.get(i).getStart()).toString() + " нарушен баланс операторных скобок");
+                    }
+                    if (!wasBegin) {
+                        throw new ParserException("Error in line: " + ((Integer) tokens.get(i).getLine()).toString()
+                                + " position: " + ((Integer) tokens.get(i).getStart()).toString() + " ожидался begin");
                     }
                     if (keyWord.getName().equals("function")) {
                         result.add(parseFunction(arrayList));
                     } else {
-                        result.add(parseMain(arrayList));
+                        if (ind == indKeyWord + 1) {
+                            result.add(parseMain(arrayList));
+                        }
+                        else {
+                            throw new ParserException("Error in line: " + ((Integer) tokens.get(i).getLine()).toString()
+                                    + " position: " + ((Integer) tokens.get(i).getEnd()).toString() + " ожидался begin");
+                        }
                     }
                 }
             } else {
@@ -208,20 +220,29 @@ public class Parse {
         String endd;
         if (i < tokens.size() && tokens.get(i).getName().equals("begin")) {
             endd = "end";
+            result.add(tokens.get(i));
+            i++;
         } else {
             endd = ";";
         }
         endd = str.equals("") ? endd : str;
 
         int balance = 0;
-        result.add(tokens.get(i));
-        i++;
-        while (i < tokens.size() && !(balance == 0 && tokens.get(i).getName().equals(endd))) {
+
+        int countIf = 0;
+        while ((i < tokens.size()  && !(balance == 0 && tokens.get(i).getName().equals(endd))) ||
+                (i + 1 < tokens.size() && tokens.get(i + 1).getName().equals("else") && countIf > 0)) {
             if (tokens.get(i).getName().equals("begin")) {
                 balance++;
             }
             if (tokens.get(i).getName().equals("end")) {
                 balance--;
+            }
+            if (tokens.get(i).getName().equals("if")) {
+                countIf++;
+            }
+            if (tokens.get(i).getName().equals("else")) {
+                countIf--;
             }
             if (balance < 0) {
                 throw new ParserException("Error in line: " + ((Integer) tokens.get(tokens.size() - 1).getLine()).toString()
@@ -230,9 +251,13 @@ public class Parse {
             result.add(tokens.get(i));
             i++;
         }
-        if (balance != 0 || i == tokens.size()) {
+        if (balance != 0) {
             throw new ParserException("Error in line: " + ((Integer) tokens.get(tokens.size() - 1).getLine()).toString()
-                    + " position: " + ((Integer) tokens.get(tokens.size() - 1).getStart()).toString() + " нарушен баланс операторных скобок");
+                    + " position: " + ((Integer) tokens.get(tokens.size() - 1).getEnd()).toString() + " нарушен баланс операторных скобок");
+        }
+        if ( i == tokens.size()) {
+            throw new ParserException("Error in line: " + ((Integer) tokens.get(tokens.size() - 1).getLine()).toString()
+                    + " position: " + ((Integer) tokens.get(tokens.size() - 1).getEnd()).toString() + " Ожидалось "  + endd);
         }
         result.add(tokens.get(i));
         return result;
@@ -701,7 +726,7 @@ public class Parse {
                     + " position: " + ((Integer) tokens.get(0).getEnd()).toString());
         }
 
-        Node result = new Node(new ArrayList<Node>(), tokens.get(0).getName());
+        Node result = new Node(new ArrayList<Node>(), "call "+ tokens.get(0).getName());
         int last = 2;
         for (int i = 2; i < tokens.size() - 1; i++) {
             if (tokens.get(i) instanceof Colon &&
@@ -719,7 +744,9 @@ public class Parse {
         for (int j = last; j < tokens.size() - 1; j++) {
             arrayList.add(tokens.get(j));
         }
-        result.getChildren().add(parseExpressions(arrayList));
+        if (arrayList.size()!= 0) {
+            result.getChildren().add(parseExpressions(arrayList));
+        }
         return result;
     }
 

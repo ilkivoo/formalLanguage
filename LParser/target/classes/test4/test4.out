@@ -4,10 +4,10 @@
     │   │   ├──  -
     │   │   │   ├── x
     │   │   │   ├── 1
-    │   ├── If body
+    │   ├── body
     │   │   ├── read
     │   │   │   ├── x
-    │   ├── Else body
+    │   ├── else
     │   │   ├── read
     │   │   │   ├── x
     │   │   ├── write

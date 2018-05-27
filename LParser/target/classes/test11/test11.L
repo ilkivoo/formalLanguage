@@ -1,0 +1,1 @@
+function fun (a) begin x := 42; end
